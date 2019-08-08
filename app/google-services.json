@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "927085664606",
+    "firebase_url": "https://riwapro-a915f.firebaseio.com",
+    "project_id": "riwapro-a915f",
+    "storage_bucket": "riwapro-a915f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927085664606:android:1de9e5f823842ecb",
+        "android_client_info": {
+          "package_name": "shubham.sharma.ri12"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927085664606-qp1sq0lkrd17ml7phopa6rac71gdisk0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "shubham.sharma.ri12",
+            "certificate_hash": "ad8df3f1aa4405b60614af4fa32cca938fc56f21"
+          }
+        },
+        {
+          "client_id": "927085664606-ddl2l82fdubntjsqdg958cr03oi7etkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjSNK00b2VJas41gtvUIRnp6rPRfnsSgY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927085664606-ddl2l82fdubntjsqdg958cr03oi7etkd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

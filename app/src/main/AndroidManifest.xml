@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="shubham.sharma.ri12">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Lead"></activity>
+        <activity android:name=".hdfc_miscellaneous" />
+        <activity android:name=".hdfc_passenger" />
+        <activity android:name=".hdfc_goods" />
+        <activity android:name=".hdfc_two_wheeler" />
+        <activity android:name=".hdfc_private_car" />
+        <activity android:name=".HDFC_S" />
+        <activity android:name=".riso_life" />
+        <activity android:name=".riso_car" />
+        <activity android:name=".riso_bike" />
+        <activity android:name=".riso_health" />
+        <activity android:name=".riskovery" />
+        <activity android:name=".buy_now" />
+        <activity
+            android:name=".dashboard"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

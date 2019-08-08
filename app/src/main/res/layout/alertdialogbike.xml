@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:background="@drawable/side_nav_bar"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ENTER YOUR CREDENTIALS"
+        android:textColor="#000"
+        android:textSize="25sp" />
+    <LinearLayout
+        android:background="@color/deeppurple"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+<EditText
+    android:id="@+id/alert_name"
+    android:hint="ENTER YOUR NAME"
+    android:textSize="20sp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/alert_phone"
+        android:hint="ENTER YOUR PHONE NUMBER"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/alert_product"
+        android:hint="ENTER YOUR PRODUCT"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/vechileno"
+        android:hint="ENTER YOUR VECHILE NO"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/alert_bike"
+        android:layout_marginTop="6dp"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:text="PROCEED"
+        android:textSize="25sp"
+        android:background="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+<android.support.v7.widget.CardView
+    app:cardCornerRadius="13dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <android.support.constraint.ConstraintLayout
+            android:background="#8D2F00FF"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/ltraff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TRAFFIC ID"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/settraffic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_toRightOf="@+id/ltraff"
+                android:text="Set traffic id"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ltraff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.915"
+                app:layout_constraintStart_toEndOf="@+id/ltraff"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/lname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ltraff"
+                android:layout_marginTop="10dp"
+                android:text="NAME"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ltraff" />
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--/>-->
+
+            <TextView
+                android:id="@+id/lproduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lname"
+                android:layout_marginTop="10dp"
+                android:text="PRODUCT"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lname" />
+
+            <TextView
+                android:id="@+id/lphone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lproduct"
+                android:layout_marginTop="8dp"
+                android:text="PHONE NUMBER"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lproduct" />
+
+            <TextView
+                android:id="@+id/lvechile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lphone"
+                android:layout_marginTop="8dp"
+                android:text="VECHILE NO"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lphone" />
+
+            <TextView
+                android:id="@+id/setname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
+                android:text="set name"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/lname"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.984"
+                app:layout_constraintStart_toEndOf="@+id/lname"
+                app:layout_constraintTop_toTopOf="@+id/lname"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/setproduct"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginStart="52dp"
+                android:layout_marginLeft="52dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="set product"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/lproduct"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/setphone"
+                app:layout_constraintTop_toTopOf="@+id/lproduct"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/setphone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="76dp"
+                android:layout_marginLeft="76dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="set phone number"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/lphone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/lphone"
+                app:layout_constraintTop_toTopOf="@+id/lphone"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/setvechileno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:text="set vechile no"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/lvechile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.926"
+                app:layout_constraintStart_toEndOf="@+id/lvechile"
+                app:layout_constraintTop_toTopOf="@+id/lvechile"
+                app:layout_constraintVertical_bias="0.0" />
+        </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
+    </LinearLayout>
+
