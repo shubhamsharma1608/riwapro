@@ -4,9 +4,16 @@ package shubham.sharma.ri12;
 public class Load {
     private String name;
     private String phone;
+
+    public Load() {
+    }
+
     private String product;
 
-    public Load() {}
+    public Load(String name, String phone, String product, String vechile)
+    {
+
+    }
     public Load(String name, String phone, String product, String trafficid, String vechileno) {
         this.name = name;
         this.phone = phone;

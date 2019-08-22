@@ -32,6 +32,11 @@ ListView listView= (ListView) view.findViewById(R.id.web);
                     Intent intent = new Intent(getActivity(), riskovery.class);
                     startActivity(intent);
                 }
+                if(position==1)
+                {
+                    Intent intent=new Intent(getActivity(),coverfox.class);
+                    startActivity(intent);
+                }
             }
         });
             return view;

@@ -38,13 +38,15 @@ import java.util.Map;
 
 import javax.annotation.Nullable;
 
+import static shubham.sharma.ri12.riskovery.user1;
+
 public class Lead extends AppCompatActivity {
     static FirebaseFirestore db;
     FirebaseFirestore db1=FirebaseFirestore.getInstance();
-    private CollectionReference data=db1.collection("Lead");
+    private CollectionReference data1= (CollectionReference) db1.collection("Lead");
    // final JSONArray arr = new JSONArray();
   //  ListView list;
-
+   String data="";
     //TextView textView;
     TextView textView1;
 
@@ -61,21 +63,22 @@ public class Lead extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        data.addSnapshotListener(this, new EventListener<QuerySnapshot>() {
+        //Log.d("rty",""+user1);
+        data1.addSnapshotListener(this, new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                 if(e!=null)
                 {
                     return;
                 }
-                String data="";
+                //String data="";
                 for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots)
                 {
                     Load load =documentSnapshot.toObject(Load.class);
                     String name=load.getName();
                     String phone=load.getPhone();
                     String product=load.getProduct();
-                    data +="name :"+name +"phone :"+phone +"product :" +product + "\n\n";
+                    data +="name :"+name +"\nphone :"+phone +"\nproduct :" +product + "\n\n";
                     Log.d("wq","data");
                     textView1.setText(data);
                 }
@@ -86,10 +89,12 @@ public class Lead extends AppCompatActivity {
 
     public void loaddata()
     {
-        data.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        data1.whereEqualTo(String.valueOf(user1),user1)
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                String data="";
+                //String data="";
                 for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots)
                 {
                     Load load=documentSnapshot.toObject(Load.class);
