@@ -8,6 +8,16 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/backg">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SELECT ANY ONE OPTION"
+        android:gravity="center"
+        android:textColor="#1F1E1E"
+        android:textSize="24.5sp"
+        android:layout_gravity="center"
+        android:textStyle="bold|italic">
+    </TextView>
 <Spinner
     android:padding="10dp"
     android:background="@drawable/border"
@@ -22,5 +32,7 @@
         android:background="@drawable/border"
         android:id="@+id/mainframe"
         android:layout_width="300dp"
-        android:layout_height="300dp"></FrameLayout>
+        android:layout_height="300dp">
+    </FrameLayout>
+
 </LinearLayout>

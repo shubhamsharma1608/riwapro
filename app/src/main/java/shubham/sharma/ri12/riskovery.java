@@ -3,9 +3,12 @@ package shubham.sharma.ri12;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,7 +33,7 @@ public class riskovery extends AppCompatActivity {
     CardView car;
     CardView life;
     //TextView life;
-    public static HashMap user1;
+   public static HashMap user1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +43,11 @@ public class riskovery extends AppCompatActivity {
         cv=findViewById(R.id.riso_car);
         car=(CardView) findViewById(R.id.riso_car);
         life=findViewById(R.id.riso_life);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
+        actionBar.setDisplayShowHomeEnabled(true);
         car.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -179,11 +187,11 @@ public class riskovery extends AppCompatActivity {
                         String name=mname.getText().toString();
                         //  Toast.makeText(riskovery.this, ""+name, Toast.LENGTH_SHORT).show();
                         Lead.db= FirebaseFirestore.getInstance();
-                        //Map<String,Object> =new HashMap<>();
+                        Map<String,Object> user1=new HashMap<>();
                         user1.put("name",mname.getText().toString());
                         // Toast.makeText(riskovery.this, ""+user, Toast.LENGTH_SHORT).show();
                         db.collection("Lead")
-                                .document(String.valueOf(user1)).collection(String.valueOf(user1)).add(user1);
+                                .document(String.valueOf(user1)).set(user1);
 //                                .set(user)
 //                                .addOnSuccessListener(new OnSuccessListener<Void>() {
 //                                    @Override
@@ -214,4 +222,42 @@ public class riskovery extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.dashboard, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.menu_home)
+        {
+            Intent intent = new Intent(riskovery.this,dashboard.class);
+            startActivity(intent);
+        }
+        if (id == R.id.menu_buynow)
+        {
+            Intent intent = new Intent(riskovery.this,buy_now.class);
+            startActivity(intent);
+        }
+        if (id == R.id.menu_lead)
+        {
+            Intent intent = new Intent(riskovery.this,Lead.class);
+            startActivity(intent);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }

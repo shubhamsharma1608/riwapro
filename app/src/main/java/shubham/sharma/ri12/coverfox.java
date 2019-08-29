@@ -59,7 +59,7 @@ public class coverfox extends AppCompatActivity {
         Button pro = mview.findViewById(R.id.alert_bike);
         builder.setView(mview);
         AlertDialog dialog = builder.create();
-        dialog.setCancelable(false);
+//        dialog.setCancelable(false);
         dialog.show();
         pro.setOnClickListener(new View.OnClickListener() {
             @Override

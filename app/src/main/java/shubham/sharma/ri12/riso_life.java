@@ -1,5 +1,6 @@
 package shubham.sharma.ri12;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
@@ -13,6 +14,11 @@ public class riso_life extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_riso_life);
         webView=findViewById(R.id.liferiso);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
+        actionBar.setDisplayShowHomeEnabled(true);
         WebSettings webSettings =webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.loadUrl("https://www.riskoveryinsurance.com/life");

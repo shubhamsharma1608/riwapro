@@ -1,5 +1,6 @@
 package shubham.sharma.ri12;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
@@ -14,6 +15,11 @@ WebView webView;
         setContentView(R.layout.activity_riso_bike);
         webView=findViewById(R.id.riso_bike);
         webView=new WebView(this);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
+        actionBar.setDisplayShowHomeEnabled(true);
         WebSettings webSettings =webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         setContentView(webView);

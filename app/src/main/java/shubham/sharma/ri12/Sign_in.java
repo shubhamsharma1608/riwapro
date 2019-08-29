@@ -4,6 +4,7 @@ package shubham.sharma.ri12;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -46,7 +47,6 @@ public class Sign_in extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-
         phoneText = (EditText) findViewById(R.id.phoneText);
         codeText = (EditText) findViewById(R.id.codeText);
         verifyButton = (Button) findViewById(R.id.verifyButton);
