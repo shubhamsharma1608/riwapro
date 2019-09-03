@@ -9,7 +9,13 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".splash"
+        <activity android:name=".car"
+            android:parentActivityName=".buy_now">
+        </activity>
+        <activity android:name=".cars24"
+            android:parentActivityName=".buy_now"/>
+        <activity
+            android:name=".splash"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,18 +23,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".satp" />
-        <activity android:name=".coverfox" />
+        <activity
+            android:name=".satp"
+            android:parentActivityName=".buy_now" />
+        <activity
+            android:name=".coverfox"
+            android:parentActivityName=".buy_now" />
         <activity android:name=".Sign_in">
-
         </activity>
         <activity android:name=".Lead" />
-        <activity android:name=".hdfc_miscellaneous" />
-        <activity android:name=".hdfc_passenger" />
-        <activity android:name=".hdfc_goods" />
-        <activity android:name=".hdfc_two_wheeler" />
-        <activity android:name=".hdfc_private_car" />
-        <activity android:name=".HDFC_S" />
+        <activity
+            android:name=".hdfc_miscellaneous"
+            android:parentActivityName=".HDFC_S" />
+        <activity
+            android:name=".hdfc_passenger"
+            android:parentActivityName=".HDFC_S" />
+        <activity
+            android:name=".hdfc_goods"
+            android:parentActivityName=".HDFC_S" />
+        <activity
+            android:name=".hdfc_two_wheeler"
+            android:parentActivityName=".HDFC_S" />
+        <activity
+            android:name=".hdfc_private_car"
+            android:parentActivityName=".HDFC_S" />
+        <activity
+            android:name=".HDFC_S"
+            android:parentActivityName=".buy_now" />
         <activity
             android:name=".riso_life"
             android:parentActivityName=".riskovery" />
@@ -46,15 +67,15 @@
             android:parentActivityName=".buy_now" />
         <activity
             android:name=".buy_now"
-            android:parentActivityName=".dashboard"></activity>
+            android:parentActivityName=".dashboard" />
         <activity
             android:name=".dashboard"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.READ_SMS" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <uses-permission android:name="android.permission.READ_SMS" />
 
 </manifest>

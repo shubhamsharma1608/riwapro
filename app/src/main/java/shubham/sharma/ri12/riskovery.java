@@ -55,6 +55,8 @@ public class riskovery extends AppCompatActivity {
                 View mview= getLayoutInflater().inflate(R.layout.alertdialogbike, null);
                 final EditText mname=mview.findViewById(R.id.alert_name);
                 final EditText mphone=mview.findViewById(R.id.alert_phone);
+                final EditText mproduct=mview.findViewById(R.id.alert_product);
+                final EditText mvechileno=mview.findViewById(R.id.vechileno);
                 Button pro=mview.findViewById(R.id.alert_bike);
                 builder.setView(mview);
                 AlertDialog dialog=builder.create();
@@ -64,12 +66,26 @@ public class riskovery extends AppCompatActivity {
                     public void onClick(View view) {
                         String name=mname.getText().toString();
                         String phone=mphone.getText().toString();
-                        Lead.db= FirebaseFirestore.getInstance();
-                        Map<String, String> user1=new HashMap<>();
-                        user1.put("name",mname.getText().toString());
-                        user1.put("phone",mphone.getText().toString());
-                        Intent intent=new Intent(riskovery.this,riso_car.class);
-                        startActivity(intent);
+                        String product=mproduct.getText().toString();
+                        String vechileno=mvechileno.getText().toString();
+                        if(mname.getText().toString().isEmpty()|| mphone.getText().toString().length()>10
+                                || mproduct.getText().toString().isEmpty() || mvechileno.getText().toString().isEmpty())
+                        {
+                            mname.setError("This field cannot be empty");
+                            mphone.setError("Phone no should be of 10 digit");
+                            mproduct.setError("This field cannot be empty");
+                            mvechileno.setError("This field cannot be empty");
+                        }
+                        else {
+                            Lead.db = FirebaseFirestore.getInstance();
+                            Map<String, String> user1 = new HashMap<>();
+                            user1.put("name", mname.getText().toString());
+                            user1.put("phone", mphone.getText().toString());
+                            user1.put("product", mproduct.getText().toString());
+                            user1.put("vechile no", mvechileno.getText().toString());
+                            Intent intent = new Intent(riskovery.this, riso_car.class);
+                            startActivity(intent);
+                        }
                     }
                 });
 
@@ -80,9 +96,9 @@ public class riskovery extends AppCompatActivity {
             public void onClick(View view) {
                 AlertDialog.Builder builder=new AlertDialog.Builder(riskovery.this);
                 View mview= getLayoutInflater().inflate(R.layout.alert_health, null);
-                final EditText mname=mview.findViewById(R.id.alert_name);
-                final EditText mphone=mview.findViewById(R.id.alert_phone);
-                final EditText mproduct=mview.findViewById(R.id.alert_product);
+                final EditText mname=mview.findViewById(R.id.alerth_name);
+                final EditText mphone=mview.findViewById(R.id.alerth_phone);
+                final EditText mproduct=mview.findViewById(R.id.alerth_product);
                 Button pro=mview.findViewById(R.id.alert_bike);
                 builder.setView(mview);
                 AlertDialog dialog=builder.create();
@@ -93,32 +109,41 @@ public class riskovery extends AppCompatActivity {
                         String name=mname.getText().toString();
                         String product=mproduct.getText().toString();
                         String phone=mphone.getText().toString();
-                        Map<String,Object> user1=new HashMap<>();
-                        user1.put("name",mname.getText().toString());
-                        user1.put("product",mproduct.getText().toString());
-                        user1.put("phone",mphone.getText().toString());
-                        Lead.db=FirebaseFirestore.getInstance();
-                        db.collection("Lead")
-                                .add(user1)
-                                .addOnSuccessListener(
+                        if(mname.getText().toString().isEmpty()|| mphone.getText().toString().length()>10
+                                || mproduct.getText().toString().isEmpty() )
+                        {
+                            mname.setError("This field cannot be empty");
+                            mphone.setError("Phone no should be of 10 digit");
+                            mproduct.setError("This field cannot be empty");
+                        }
+                        else {
+                            Map<String, Object> user1 = new HashMap<>();
+                            user1.put("name", mname.getText().toString());
+                            user1.put("product", mproduct.getText().toString());
+                            user1.put("phone", mphone.getText().toString());
+                            Lead.db = FirebaseFirestore.getInstance();
+                            db.collection("Lead")
+                                    .add(user1)
+                                    .addOnSuccessListener(
 
 
-                                        new OnSuccessListener<DocumentReference>() {
-                                    @Override
-                                    public void onSuccess(DocumentReference documentReference) {
-                                        Toast.makeText(riskovery.this, "data added", Toast.LENGTH_SHORT).show();
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(riskovery.this, "failed"+e, Toast.LENGTH_SHORT).show();
-                                    }
-                                });
+                                            new OnSuccessListener<DocumentReference>() {
+                                                @Override
+                                                public void onSuccess(DocumentReference documentReference) {
+                                                    Toast.makeText(riskovery.this, "data added", Toast.LENGTH_SHORT).show();
+                                                }
+                                            })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(riskovery.this, "failed" + e, Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
 
 
-                        Intent intent=new Intent(riskovery.this,riso_life.class);
-                        startActivity(intent);
+                            Intent intent = new Intent(riskovery.this, riso_life.class);
+                            startActivity(intent);
+                        }
                     }
                 });
 
@@ -143,27 +168,37 @@ public class riskovery extends AppCompatActivity {
                         String name=mname.getText().toString();
                         String product=mproduct.getText().toString();
                         String phone=mphone.getText().toString();
-                        Map<String,Object> user1=new HashMap<>();
-                        user1.put("name",mname.getText().toString());
-                        user1.put("product",mproduct.getText().toString());
-                        user1.put("phone",mphone.getText().toString());
-                        Lead.db=FirebaseFirestore.getInstance();
-                        db.collection("Lead")
-                                .add(user1)
-                                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                    @Override
-                                    public void onSuccess(DocumentReference documentReference) {
-                                        Toast.makeText(riskovery.this, "data added", Toast.LENGTH_SHORT).show();
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(riskovery.this, "failed"+e, Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-                        Intent intent =new Intent(riskovery.this,riso_health.class);
-                        startActivity(intent);
+                        if(mname.getText().toString().isEmpty()|| mphone.getText().toString().length()>10
+                                || mproduct.getText().toString().isEmpty() )
+                        {
+                            mname.setError("This field cannot be empty");
+                            mphone.setError("Phone no should be of 10 digit");
+                            mproduct.setError("This field cannot be empty");
+
+                        }
+                        else {
+                            Map<String, Object> user1 = new HashMap<>();
+                            user1.put("name", mname.getText().toString());
+                            user1.put("product", mproduct.getText().toString());
+                            user1.put("phone", mphone.getText().toString());
+                            Lead.db = FirebaseFirestore.getInstance();
+                            db.collection("Lead")
+                                    .add(user1)
+                                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                        @Override
+                                        public void onSuccess(DocumentReference documentReference) {
+                                            Toast.makeText(riskovery.this, "data added", Toast.LENGTH_SHORT).show();
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(riskovery.this, "failed" + e, Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                            Intent intent = new Intent(riskovery.this, riso_health.class);
+                            startActivity(intent);
+                        }
                     }
                 });
 
@@ -177,6 +212,9 @@ public class riskovery extends AppCompatActivity {
                 AlertDialog.Builder builder=new AlertDialog.Builder(riskovery.this);
                 View mview= getLayoutInflater().inflate(R.layout.alertdialogbike, null);
                 final EditText mname=mview.findViewById(R.id.alert_name);
+                final EditText mphoneno=mview.findViewById(R.id.alert_phone);
+                final EditText mvechileno=mview.findViewById(R.id.vechileno);
+                final EditText mproduct=mview.findViewById(R.id.alert_product);
                 Button pro=mview.findViewById(R.id.alert_bike);
                 builder.setView(mview);
                 AlertDialog dialog=builder.create();
@@ -185,13 +223,29 @@ public class riskovery extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         String name=mname.getText().toString();
+                        String product=mproduct.getText().toString();
+                        String phone=mphoneno.getText().toString();
+                        String vechileno=mvechileno.getText().toString();
                         //  Toast.makeText(riskovery.this, ""+name, Toast.LENGTH_SHORT).show();
-                        Lead.db= FirebaseFirestore.getInstance();
-                        Map<String,Object> user1=new HashMap<>();
-                        user1.put("name",mname.getText().toString());
-                        // Toast.makeText(riskovery.this, ""+user, Toast.LENGTH_SHORT).show();
-                        db.collection("Lead")
-                                .document(String.valueOf(user1)).set(user1);
+                        if(mname.getText().toString().isEmpty()|| mphoneno.getText().toString().length()>10
+                                || mproduct.getText().toString().isEmpty()||mvechileno.getText().toString().isEmpty() )
+                        {
+                            mname.setError("This field cannot be empty");
+                            mphoneno.setError("Phone no should be of 10 digit");
+                            mproduct.setError("This field cannot be empty");
+                            mvechileno.setError("This field cannot be empty");
+
+                        }
+                        else {
+                            Lead.db = FirebaseFirestore.getInstance();
+                            Map<String, Object> user1 = new HashMap<>();
+                            user1.put("name", mname.getText().toString());
+                            user1.put("product", mproduct.getText().toString());
+                            user1.put("vechile no", mvechileno.getText().toString());
+                            user1.put("phone no", mphoneno.getText().toString());
+                            // Toast.makeText(riskovery.this, ""+user, Toast.LENGTH_SHORT).show();
+                            db.collection("Lead")
+                                    .document(String.valueOf(user1)).set(user1);
 //                                .set(user)
 //                                .addOnSuccessListener(new OnSuccessListener<Void>() {
 //                                    @Override
@@ -206,17 +260,18 @@ public class riskovery extends AppCompatActivity {
 //                                        //Toast.makeText(riskovery.this, "failed"+e, Toast.LENGTH_LONG).show();
 //                                    }
 //                                });
-                        Intent intent=new Intent(riskovery.this,riso_bike.class);
-                        startActivity(intent);
+                            Intent intent = new Intent(riskovery.this, riso_bike.class);
+                            startActivity(intent);
+                        }
                     }
                 });
-                cv.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent=new Intent(riskovery.this,riso_car.class);
-                        startActivity(intent);
-                    }
-                });
+//                cv.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        Intent intent=new Intent(riskovery.this,riso_car.class);
+//                        startActivity(intent);
+//                    }
+//                });
 
 
             }

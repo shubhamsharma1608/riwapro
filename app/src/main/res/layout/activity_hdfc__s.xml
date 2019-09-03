@@ -38,7 +38,7 @@
                     <ImageView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/cerclebackgroundpurple"
+                        android:background="#fff"
                         android:src="@drawable/motorcycle"
                         android:padding="10dp"/>
                     <TextView
@@ -77,7 +77,7 @@
                     <ImageView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/cerclebackgroundpink"
+                        android:background="#fff"
                         android:src="@drawable/car"
                         android:padding="10dp"/>
                     <TextView
@@ -124,7 +124,7 @@
                     <ImageView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/cerclebackgroundgreen"
+                        android:background="#fff"
                         android:src="@drawable/heartbeat"
                         android:padding="10dp"/>
                     <TextView
@@ -165,7 +165,7 @@
                     <ImageView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/cerclebackgroundyello"
+                        android:background="#fff"
                         android:padding="10dp"
                         android:src="@drawable/family" />
 
@@ -215,7 +215,7 @@
                     <ImageView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/cerclebackgroundgreen"
+                        android:background="#fff"
                         android:src="@drawable/heartbeat"
                         android:padding="10dp"/>
                     <TextView

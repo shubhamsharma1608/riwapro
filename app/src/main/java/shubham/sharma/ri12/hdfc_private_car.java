@@ -1,5 +1,6 @@
 package shubham.sharma.ri12;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
@@ -11,6 +12,11 @@ WebView webView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
+        actionBar.setDisplayShowHomeEnabled(true);
         setContentView(R.layout.activity_hdfc_private_car);
         webView=findViewById(R.id.hdfc_private_car);
         webView=findViewById(R.id.riso_bike);

@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Signed Out"
+        android:textColor="#3477AC"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/phoneText"
@@ -30,10 +31,12 @@
 
     <Button
         android:id="@+id/sendButton"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:onClick="sendCode"
         android:text="Send Code"
+        android:textColor="#fff"
+        android:background="@drawable/button_back"
         app:layout_constraintBottom_toTopOf="@+id/resendButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -41,10 +44,12 @@
 
     <Button
         android:id="@+id/resendButton"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:onClick="resendCode"
         android:text="Resend Code"
+        android:textColor="#fff"
+        android:background="@drawable/button_back"
         app:layout_constraintBottom_toTopOf="@+id/codeText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -65,10 +70,12 @@
 
     <Button
         android:id="@+id/verifyButton"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:onClick="verifyCode"
         android:text="Verify Code"
+        android:textColor="#fff"
+        android:background="@drawable/button_back"
         app:layout_constraintBottom_toTopOf="@+id/signoutButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -76,10 +83,12 @@
 
     <Button
         android:id="@+id/signoutButton"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:onClick="signOut"
         android:text="Sign Out"
+        android:textColor="#fff"
+        android:background="@drawable/button_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

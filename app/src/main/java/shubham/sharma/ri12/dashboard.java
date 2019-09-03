@@ -16,6 +16,7 @@ import android.widget.TextView;
 public class dashboard extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 TextView textView;
+TextView cars24;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +26,14 @@ TextView textView;
 
         setSupportActionBar(toolbar);
 textView=findViewById(R.id.insure);
+cars24=findViewById(R.id.cars);
+cars24.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent intent=new Intent(dashboard.this, cars24.class);
+        startActivity(intent);
+    }
+});
 textView.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
@@ -68,9 +77,22 @@ textView.setOnClickListener(new View.OnClickListener() {
         //noinspection SimplifiableIfStatement
         if (id == R.id.menu_home)
         {
+            Intent intent=new Intent(dashboard.this,dashboard.class);
+            startActivity(intent);
             return true;
         }
-
+        if (id == R.id.menu_lead)
+        {
+            Intent intent=new Intent(dashboard.this,Lead.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.menu_buynow)
+        {
+            Intent intent=new Intent(dashboard.this,buy_now.class);
+            startActivity(intent);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -88,8 +110,10 @@ textView.setOnClickListener(new View.OnClickListener() {
 
         } else if (id == R.id.profile) {
 
-        } else if (id == R.id.bike) {
-
+        } else if (id == R.id.logout)
+        {
+        Intent intent=new Intent(dashboard.this,Sign_in.class);
+        startActivity(intent);
         } else if (id == R.id.lead) {
             Intent intent=new Intent(dashboard.this,Lead.class);
             startActivity(intent);
